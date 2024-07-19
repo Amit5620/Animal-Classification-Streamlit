@@ -33,7 +33,8 @@ if submit and uploaded_file:
     resized_image = resized_image.reshape(-1,180,180,3)
     resized_image = np.array(resized_image)
 
-    model = tf.keras.models.load_model('./models/classify_model.h5')
+    model = tf.keras.models.load_model('./models/animal.keras')
+    # model = tf.keras.models.load_model('./models/classify_model.h5')
     predictions = model.predict(resized_image)
     max_index = predictions.argmax()
 
